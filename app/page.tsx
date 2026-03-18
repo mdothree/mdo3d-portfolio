@@ -1,6 +1,23 @@
 import PlatformCard from '@/components/PlatformCard';
 
-const platforms = [
+type PlatformColor = 'purple' | 'orange' | 'gold';
+type PlatformStatus = 'Live' | 'Coming Soon' | 'In Development';
+
+interface PlatformItem {
+  name: string;
+  description: string;
+  path: string;
+  color: PlatformColor;
+  status: PlatformStatus;
+  external?: boolean;
+}
+
+interface PlatformCategory {
+  category: string;
+  items: PlatformItem[];
+}
+
+const platforms: PlatformCategory[] = [
   // Spiritual & Divination
   {
     category: 'Spiritual & Divination',
